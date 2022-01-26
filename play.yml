@@ -54,7 +54,7 @@
       name: python-pip
       state: present
   - name: Install docker-py python module
-  
+    remote_user: edureka
     pip:
       name: docker-py
       state: present
