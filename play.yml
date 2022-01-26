@@ -49,6 +49,7 @@
     tags:
       - docker
   - name: Start the container
+    remote_user: edureka
     docker_container:
       name: appSample
       image: "roynitishdev/webapp"
