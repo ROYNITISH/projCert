@@ -2,19 +2,7 @@
   become: yes
   gather_facts: false
   tasks:
-  - name: Install docker packages
-    remote_user: ubuntu
-    apt:
-      name: "{{ item }}"
-      state: present
-      update_cache: yes
-    with_items:
-      - apt-transport-https
-      - ca-certificates
-      - curl
-      - software-properties-common
-    tags:
-      - docker
+ 
   - name: Add Docker s official GPG key
     remote_user: ubuntu
     apt_key:
