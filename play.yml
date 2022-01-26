@@ -49,10 +49,12 @@
     tags:
       - docker
   - name: Install python pip
+    remote_user: edureka
     apt:
       name: python-pip
       state: present
   - name: Install docker-py python module
+  
     pip:
       name: docker-py
       state: present
