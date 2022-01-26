@@ -1,6 +1,8 @@
 - hosts: test
   become: yes
   gather_facts: false
+  vars:
+    ansible_python_interpreter: /usr/bin/python3 
   tasks:
  
   - name: Add Docker s official GPG key
