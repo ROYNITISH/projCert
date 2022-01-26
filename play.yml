@@ -1,8 +1,6 @@
 - hosts: test
   become: yes
   gather_facts: false
-  vars:
-    ansible_python_interpreter: /usr/bin/python3 
   tasks:
  
   - name: Add Docker s official GPG key
@@ -50,6 +48,15 @@
       append: yes
     tags:
       - docker
+  - name: Install python pip
+    apt:
+      name: python-pip
+      state: present
+  - name: Install docker-py python module
+    pip:
+      name: docker-py
+      state: present
+     
   - name: Start the container
     remote_user: edureka
     docker_container:
